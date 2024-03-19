@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-class Figura{
+class Figura
+{
 private:
     int b, h;
     float a;
@@ -13,17 +14,19 @@ public:
     float getArea();
 };
 
-class cuadrado:public Figura{
-    public:
+class cuadrado : public Figura
+{
+public:
     cuadrado(int b);
-    
 };
-class rectangulo:public Figura {
-    public:
-    rectangulo(int b,int h);
+class rectangulo : public Figura
+{
+public:
+    rectangulo(int b, int h);
 };
-class triangulo:public Figura{
-    public:
+class triangulo : public Figura
+{
+public:
     triangulo(int b, int h);
 };
 /*
@@ -49,57 +52,60 @@ class triangulo:public Figura{
     Asignar el área del Triángulo.
 */
 
-int main () {
+int main()
+{
 
     cuadrado s(5);
     cout << s.getArea() << endl; // 25
-    rectangulo r(5,5);
+    rectangulo r(5, 5);
     cout << r.getArea() << endl; // 25
-    triangulo (5, 10);
+    triangulo t(5, 10);
     cout << t.getArea() << endl; // 25
     return 0;
 }
 
-
-Figura::Figura(){
-    this->b=0:
-    this->h=0;
-    this->a=0;
+Figura::Figura()
+{
+    this->b = 0 ;
+    this->h = 0;
+    this->a = 0;
 }
 
-Figura::Figura(int b,int h){
-this->b=b;
-this->h=h;
+Figura::Figura(int b, int h)
+{
+    this->b = b;
+    this->h = h;
 }
 
-void Figura:: setArea(float a){
+void Figura::setArea(float a)
+{
 
-    this a->a;
-
+    this ->a=a;
 }
 
-float Figura::getArea(){
-return this->a;
-    cout<<"Esta es el area de su figura"<<this->a<<endl;
+float Figura::getArea()
+{
+    cout << "Esta es el area de su figura" << this->a << endl;
+    return this->a;
 }
 
+cuadrado::cuadrado(int b) : Figura( b,  b)
+{
+    float area = b * b;
+    setArea(area);
+};
 
- cuadrado::cuadrado(int b):Figura( int b, int h){
-float area=b*b;
-setArea(area);
- };
+rectangulo::rectangulo(int b, int h) : Figura( b,  h)
+{
+    float area = b * h;
+    setArea(area);
+};
 
- rectangulo::rectangulo(int b,int h):Figura(int b, int h){
-float area=b*h;
-setArea(area);
-
- };
-
- triangulo::triangulo(int b,int h):Figura(int b, int h){
-float area=(b*h)/2;
-setArea(area);
-
- };
+triangulo::triangulo(int b, int h) : Figura( b,  h)
+{
+    float area = (b * h) / 2;
+    setArea(area);
+};
 /*Notas
 Puedes hacer uso de tus trabajos pasados así como de la documentación de C++
-*/ 
+*/
