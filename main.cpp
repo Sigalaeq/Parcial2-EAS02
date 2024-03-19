@@ -14,21 +14,18 @@ public:
 };
 
 class cuadrado:public Figura{
-    cuadrado():Figura()
-    cuadrado(int b,int h,):Figura( b,  h);
+    public:
+    cuadrado(int b);
     
-
-
-
-
 };
 class rectangulo:public Figura {
-rectangulo(int b,int h):Figura(int b, int h);
+    public:
+    rectangulo(int b,int h);
 };
 class triangulo:public Figura{
-    triangulo():Figura();
-    triangulo
-}
+    public:
+    triangulo(int b, int h);
+};
 /*
     Implementa los constructores y funciones de la clase Figura.
     El área NO se debe de asignar en el constructor de Figura, ÚNICAMENTE en el constructor individual de cada figura.
@@ -65,28 +62,44 @@ int main () {
 
 
 Figura::Figura(){
-    b=0:
-    h=0;
-    a=0;
+    this->b=0:
+    this->h=0;
+    this->a=0;
 }
 
 Figura::Figura(int b,int h){
 this->b=b;
 this->h=h;
-a=0;
 }
 
 void Figura:: setArea(float a){
 
-    a=this->a;
+    this a->a;
 
 }
 
 float Figura::getArea(){
-a=this->a;
+return this->a;
     cout<<"Esta es el area de su figura"<<this->a<<endl;
 }
 
+
+ cuadrado::cuadrado(int b):Figura( int b, int h){
+float area=b*b;
+setArea(area);
+ };
+
+ rectangulo::rectangulo(int b,int h):Figura(int b, int h){
+float area=b*h;
+setArea(area);
+
+ };
+
+ triangulo::triangulo(int b,int h):Figura(int b, int h){
+float area=(b*h)/2;
+setArea(area);
+
+ };
 /*Notas
 Puedes hacer uso de tus trabajos pasados así como de la documentación de C++
 */ 
